@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ProjectileMotion.environment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ProjectileMotion.html"><font color="#ffffff">ProjectileMotion</font></a>.environment</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Ccode%5Cphysicsbeyond%5Cprojectilemotion%5Cprojectilemotion%5Cenvironment.py">e:\code\physicsbeyond\projectilemotion\projectilemotion\environment.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ProjectileMotion.environment.html#Environment">Environment</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Environment">class <strong>Environment</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Environment">Environment</a>(bodies=[],&nbsp;external_forces=[],&nbsp;gravity=False)<br>
+&nbsp;<br>
+Class&nbsp;that&nbsp;allows&nbsp;for&nbsp;the&nbsp;simulation&nbsp;of&nbsp;multiple&nbsp;interacting&nbsp;bodies.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Environment-__init__"><strong>__init__</strong></a>(self, bodies=[], external_forces=[], gravity=False)</dt><dd><tt><a href="#Environment">Environment</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;constructor<br>
+bodies:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;bodies&nbsp;in&nbsp;the&nbsp;scope&nbsp;of&nbsp;the&nbsp;enviroment.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Body&nbsp;iterable]<br>
+external_forces:&nbsp;&nbsp;&nbsp;&nbsp;Forces&nbsp;that&nbsp;apply&nbsp;to&nbsp;every&nbsp;body&nbsp;in&nbsp;the&nbsp;enironemnt.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Vec3&nbsp;iterable]<br>
+gravity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weather&nbsp;to&nbsp;calculate&nbsp;gravitational&nbsp;pull&nbsp;between&nbsp;bodies.&nbsp;&nbsp;&nbsp;&nbsp;[boolean]<br>
+timestep:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;timestep&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;simulation.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[float]<br>
+Returns:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Environment-load"><strong>load</strong></a>(self, filepath)</dt><dd><tt>Loads&nbsp;the&nbsp;environment&nbsp;save&nbsp;state&nbsp;from&nbsp;a&nbsp;json&nbsp;file<br>
+filepath:&nbsp;&nbsp;&nbsp;The&nbsp;path&nbsp;to&nbsp;the&nbsp;json&nbsp;file&nbsp;containing&nbsp;the&nbsp;save&nbsp;state.<br>
+Returns:&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileNotFoundError&nbsp;if&nbsp;the&nbsp;filepath&nbsp;does&nbsp;not&nbsp;exsist.&nbsp;<br>
+&nbsp;<br>
+Used&nbsp;over&nbsp;from_json&nbsp;if&nbsp;reseting&nbsp;environment&nbsp;that&nbsp;has&nbsp;already&nbsp;been&nbsp;initialised.</tt></dd></dl>
+
+<dl><dt><a name="Environment-run"><strong>run</strong></a>(self, tfinal=0, tinitial=0, timestep=0.001, num_timesteps=None, timestep_callback=None, loop=False)</dt><dd><tt>Public&nbsp;method&nbsp;to&nbsp;run&nbsp;the&nbsp;simulation&nbsp;of&nbsp;the&nbsp;enviroment.<br>
+tfinal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;to&nbsp;simulate&nbsp;up&nbsp;to.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[float]<br>
+tinital:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;to&nbsp;start&nbsp;simulation&nbsp;at.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[float]<br>
+timestep:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;timestep&nbsp;to&nbsp;use.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[float]<br>
+num_timesteps:&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;timesteps&nbsp;to&nbsp;use.&nbsp;&nbsp;&nbsp;&nbsp;[int]<br>
+loop:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weather&nbsp;to&nbsp;loop&nbsp;infinitly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[bool]<br>
+Returns:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterable&nbsp;of&nbsp;the&nbsp;bodies&nbsp;in&nbsp;the&nbsp;simulation.&nbsp;<br>
+&nbsp;<br>
+If&nbsp;both&nbsp;num_timesteps&nbsp;and&nbsp;timestep&nbsp;are&nbsp;specified,&nbsp;num_timesteps&nbsp;will&nbsp;be&nbsp;used.<br>
+tinital&nbsp;shoud&nbsp;only&nbsp;be&nbsp;used&nbsp;if&nbsp;the&nbsp;simulation&nbsp;is&nbsp;being&nbsp;continued&nbsp;from&nbsp;a&nbsp;prievious&nbsp;run.<br>
+If&nbsp;loop&nbsp;is&nbsp;true&nbsp;then&nbsp;the&nbsp;simulation&nbsp;runs&nbsp;indefinitly&nbsp;e.g.&nbsp;if&nbsp;driving&nbsp;a&nbsp;continuous&nbsp;animation.</tt></dd></dl>
+
+<dl><dt><a name="Environment-save"><strong>save</strong></a>(self, filepath)</dt><dd><tt>Saves&nbsp;the&nbsp;environment&nbsp;state&nbsp;to&nbsp;a&nbsp;json&nbsp;file&nbsp;given&nbsp;in&nbsp;filepath<br>
+filepath:&nbsp;&nbsp;&nbsp;Path&nbsp;to&nbsp;save&nbsp;the&nbsp;json&nbsp;file<br>
+Returns:&nbsp;&nbsp;&nbsp;&nbsp;None</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Environment-from_json"><strong>from_json</strong></a>(filepath)</dt><dd><tt>Creates&nbsp;an&nbsp;environment&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;json&nbsp;file&nbsp;save&nbsp;state.<br>
+filepath:&nbsp;&nbsp;&nbsp;The&nbsp;path&nbsp;of&nbsp;the&nbsp;json&nbsp;save&nbsp;file.&nbsp;[String]<br>
+Returns:&nbsp;&nbsp;&nbsp;&nbsp;Environemnt&nbsp;Object<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FileNotFoundError&nbsp;if&nbsp;the&nbsp;filepath&nbsp;does&nbsp;not&nbsp;exsist.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
